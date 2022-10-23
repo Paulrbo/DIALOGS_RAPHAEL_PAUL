@@ -12,14 +12,14 @@ public class DialogSystem : MonoBehaviour
 
     private int dialogIndex = 0;
 
-    private void Start()
+    private void Start() //initialise les bouttons
     {
         nextButton.onClick.AddListener(this.HandleNextButton);
         previousButton.onClick.AddListener(this.HandlePreviousButton);
         this.UpdateDialogDisplay(dialogIndex);
     }
 
-    private void UpdateDialogDisplay(int index)
+    private void UpdateDialogDisplay(int index) //gère l'affichage des dialogues
     {
         if (index >= 0 && index < discussion.dialogues.Count)
         {
@@ -30,7 +30,7 @@ public class DialogSystem : MonoBehaviour
         this.previousButton.enabled = index > 0;
     }
 
-    private void HandleNextButton()
+    private void HandleNextButton() //parcours la liste pour afficher le dialogue suivant
     {
         if (this.dialogIndex + 1 <= (discussion.dialogues.Count - 1))
         {
@@ -39,8 +39,8 @@ public class DialogSystem : MonoBehaviour
 
         this.UpdateDialogDisplay(this.dialogIndex);
     }
-
-    private void HandlePreviousButton()
+    
+    private void HandlePreviousButton() //parcours la liste dans le sens inverse pour afficher le dialogue précédent
     {
         if (this.dialogIndex - 1 >= 0)
         {

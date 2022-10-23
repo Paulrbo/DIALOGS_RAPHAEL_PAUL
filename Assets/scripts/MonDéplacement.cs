@@ -115,7 +115,7 @@ public class MonDéplacement : MonoBehaviour
  
  
         //Rotation de la caméra
-        if (!isTalking)
+        if (!isTalking) //permet de pouvoir bloquer la caméra lorsque l'on appuiera sur le cylindre
         {
             //Input.GetAxis("Mouse Y") = mouvement de la souris haut/bas
             //On est en 3D donc applique ("Mouse Y") sur l'axe de rotation X 
